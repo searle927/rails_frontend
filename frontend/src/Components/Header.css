@@ -1,0 +1,89 @@
+/* * {
+  box-sizing: inherit;
+} */
+h1 {
+    color: #1A323C;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    text-align: left;
+  }
+  .navQuote {
+    font-family: 'Courier Prime', monospace;
+    color: #3b3349;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-left: 60px;
+  }
+  .Header{
+    display: flex;
+    border-bottom: 4px solid #af2a4d;
+  }
+  body {
+    font-family: 'Courier Prime', monospace;
+    margin: 25px;
+    line-height: 5px;
+  }
+  
+  li {
+    list-style: none;
+    text-align: left;
+  }
+  h3 {
+    color: #4f8796;
+    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+    text-align: left;
+  }
+  p {
+    color: black;
+    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+  }
+  .songArtist {
+    color: green;
+    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+    text-align: left;
+  }
+  form {
+    line-height: 30px;
+    text-align: left
+  }
+  label {
+    color: #4f8796;
+   
+  }
+  input {
+    width: 100%;
+  }
+  button {
+   background: #af2a4d;
+   color: white;
+   border-style: round;
+   margin-top: 5px;
+   width: 100%;
+   font-weight: bold;
+  }
+  /* .songTitle {
+    color: #4f8796;
+    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+  }
+  .songTime {
+    color: black;
+    font-size: 13px;
+  }
+  .songArtist {
+    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+    color: black;
+  }
+  button {
+    background: #af2a4d;
+    color: white;
+    border-style: round;
+    margin-top: 5px;
+    width: 100%;
+    font-weight: bold;
+  } */

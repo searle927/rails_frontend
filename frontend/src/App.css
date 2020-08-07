@@ -1,0 +1,15 @@
+.App {
+  width: 500px;
+  height: 90vh;
+  border: 3px solid lightgrey;
+  border-right-color: darkblue;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+}
+.playlist-container {
+  height: 95%;
+  overflow: scroll;
+
+}
