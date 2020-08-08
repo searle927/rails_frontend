@@ -10,7 +10,7 @@ function Faves({ faves }) {
     let favesList = faves.map(song => {
         <div key={song.id}>
             <h3 className="songTitle">{song.title}</h3>
-            <p className="songTime">{song.time}</p>
+            <p className="songTime">{song.duration}</p>
             <p className="songArtist">{song.artist}</p>
             <button>Edit Song</button>
             <button>Remove from Favorites</button>

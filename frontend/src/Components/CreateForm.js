@@ -13,8 +13,8 @@ const CreateForm = ({ item, handleSubmit, handleChange }) => {
         <input placeholder='add an artist' value={item.artist} name="artist" onChange={handleChange} />
         <br />
         
-        <label>Time</label><br />
-        <input placeholder='add a time' value={item.time} name="time" onChange={handleChange} />
+        <label>Duration</label><br />
+        <input placeholder='add a duration' value={item.duration} name="duration" onChange={handleChange} />
         <br />
         <br />
         

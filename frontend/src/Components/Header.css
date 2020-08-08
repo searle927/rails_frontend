@@ -7,6 +7,7 @@ h1 {
     font-weight: bold;
     font-size: 48px;
     text-align: left;
+    padding-bottom:20px;
   }
   .navQuote {
     font-family: 'Courier Prime', monospace;
@@ -28,6 +29,11 @@ h1 {
   li {
     list-style: none;
     text-align: left;
+    border-bottom: solid lightgrey 2px;
+    padding-bottom: 15px;
+  }
+  ul {
+    padding-left: 0px;
   }
   h3 {
     color: #4f8796;
@@ -55,35 +61,28 @@ h1 {
    
   }
   input {
-    width: 100%;
+    width: 90%;
   }
   button {
    background: #af2a4d;
    color: white;
    border-style: round;
    margin-top: 5px;
-   width: 100%;
+   width: 20%;
    font-weight: bold;
+   height: 40px;
+   margin-right: 20px;
   }
-  /* .songTitle {
-    color: #4f8796;
-    font-weight: bold;
-    font-family: 'Courier Prime', monospace;
+  .duration {
+    float: right;
+    margin-right: 100px;
   }
-  .songTime {
-    color: black;
-    font-size: 13px;
-  }
-  .songArtist {
-    font-weight: bold;
-    font-family: 'Courier Prime', monospace;
-    color: black;
-  }
-  button {
+  .Destroy {
     background: #af2a4d;
-    color: white;
-    border-style: round;
-    margin-top: 5px;
-    width: 100%;
-    font-weight: bold;
-  } */
+   color: white;
+   border-style: round;
+   margin-top: 5px;
+   width: 20%;
+   font-weight: bold;
+   height: 40px;
+  }

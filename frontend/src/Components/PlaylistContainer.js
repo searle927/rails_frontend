@@ -6,20 +6,22 @@ import axios from 'axios'
 import CreateForm from './CreateForm'
 
 
+
 function PlaylistContainer(props) {
     const [songs, setSongs] = useState([])
     const [faves, setFaves] = useState([])
-    const [input, setInput] = useState({ title: "", time: "", artist: "" });
+    const [input, setInput] = useState({ title: "", duration: "", artist: "" });
     const [item, setItem] = useState(null);
     const [fave, setFave] = useState(null)
     const [isUpdated, setIsUpdated] = useState(false)
+    const [isDeleted,setIsDeleted] = useState(false)
 
 console.log(apiUrl)
 
     useEffect(() => {
       const makeAPICall = async () => {
         try {
-          const response = await axios(`${apiUrl}/songs`)
+          const response = await axios(`http://localhost:3000/songs`)
           setSongs(response.data)
           console.log('this', response.data)
         } catch (err) {
@@ -43,7 +45,7 @@ console.log(apiUrl)
     
         console.log("handleSubmit");
         axios({
-          url: `${apiUrl}/songs`,
+          url: `http://localhost:3000/songs`,
           method: "POST",
           data: input,
         })
@@ -57,7 +59,7 @@ console.log(apiUrl)
     useEffect(() => {
         const makeAPICall = async () => {
           try {
-            const response = await axios(`${apiUrl}/songs/faves`)
+            const response = await axios(`http://localhost:3000/songs/faves`)
             setFaves(response.data)
             console.log(response.data)
           } catch (err) {
@@ -76,16 +78,17 @@ console.log(apiUrl)
     let songList = songs.map(song =>
          (<li key={song.id}>
             <h3>{song.title}</h3>
-            <p>{song.time}</p>
+            <p className='duration'>{song.duration}</p>
             <p>{song.artist}</p>
             <button onClick={() => toggleFaveTrue(song)}>Add to Favorites</button>
+            <button className="Destroy" onClick={()=>props.destroy({item})}>Delete</button>
         </li>
     ))
 
     const toggleFaveTrue = (song) => {
         console.log(song)
         axios({
-            url: `${apiUrl}/songs/${song._id}/fav`,
+            url: `http://localhost:3000/songs/${song._id}/fav`,
             method: "PUT",
             data: { isFavorite: true },
           })
@@ -98,7 +101,7 @@ console.log(apiUrl)
 
         <li key={song.id}>
             <h3>{song.title}</h3>
-            <p>{song.time}</p>
+            <p>{song.duration}</p>
             <p className="songArtist">{song.artist}</p>
             <button onClick={() => toggleFaveFalse(song)}>Remove from Favorites</button>
         </li>
@@ -107,7 +110,7 @@ console.log(apiUrl)
     const toggleFaveFalse = (song) => {
         console.log(song)
         axios({
-            url: `${apiUrl}/songs/${song._id}/fav/remove`,
+            url: `http://localhost:3000/songs/${song._id}/fav/remove`,
             method: "PUT",
             data: { isFavorite: false },
           })
@@ -117,14 +120,29 @@ console.log(apiUrl)
     }
 
 
+    const destroy = async (song) => {
+      await axios({
+        url: `${apiUrl}/${song.song.id}`,
+        method: 'DELETE'
+      })
+      setIsDeleted(true)
+      window.location.reload()
+    }
+    
+      if (!songs) {
+        return <p>Loading...</p>
+      }
+      if (isDeleted) {
+      return null
+      } 
+
+
   return (
     <div className="playlist-container">
-        <h1>Playlist</h1>
+        <h1>Playlist 1</h1>
         <ul>{songList}</ul>
-        {/* <Songs songs={songs}/> */} 
-        <h1>Favorites</h1>
+        <h2>Favorite Song List</h2>
         <ul>{favesList}</ul>
-        {/* <Faves faves={faves}/> */}
         <CreateForm 
             item={input}
             handleChange={handleChange}
